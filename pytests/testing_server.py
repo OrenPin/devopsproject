@@ -3,16 +3,16 @@ import unittest
 
 class TestServer(unittest.TestCase):
     def test_logs_endpoint(self):
-        response = requests.get('http://localhost:8080/logs')
+        response = requests.get('http://localhost:8080/api/logs')
         self.assertEqual(response.status_code, 200, 'The logs endpoint should return a 200 status code')
         self.assertEqual(response.headers.get('Content-Type'), 'application/json', 'The logs endpoint should return JSON data')
         # Add specific assertions for the content of the response
 
     def test_transaction_endpoint(self):
-        initial_response = requests.get('http://localhost:8080/logs')
+        initial_response = requests.get('http://localhost:8080/api/logs')
         initial_logs_count = len(initial_response.json())
 
-        response = requests.get('http://localhost:8080/transaction')
+        response = requests.get('http://localhost:8080/api/transaction')
         self.assertEqual(response.status_code, 200, 'The transaction endpoint should return a 200 status code')
         self.assertEqual(response.text, 'A new transaction has been created.', 'The transaction endpoint should return a success message')
 
