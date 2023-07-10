@@ -1,5 +1,6 @@
 // The DevOps Project of:
 // Oren Pinhasov
+// Itai Shnieder
 package com.example.devopsproject;
 
 import com.example.devopsproject.model.Log;
